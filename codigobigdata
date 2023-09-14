@@ -1,0 +1,98 @@
+//Árboles de Decisión (usando scikit-learn)://
+
+from sklearn.tree import DecisionTreeClassifier
+
+//Crear un clasificador de árbol de decisión
+clf = DecisionTreeClassifier()
+
+// Ajustar el modelo a los datos de entrenamiento
+clf.fit(X_train, y_train)
+
+// Hacer predicciones
+y_pred = clf.predict(X_test)
+
+
+
+
+//Regresión Logística (usando scikit-learn)://
+
+from sklearn.linear_model import LogisticRegression
+
+// Crear un modelo de regresión logística
+model = LogisticRegression()
+
+//Ajustar el modelo a los datos de entrenamiento
+model.fit(X_train, y_train)
+
+// Hacer predicciones
+y_pred = model.predict(X_test)
+
+
+
+
+//Regresión Lineal (usando scikit-learn)://
+
+
+from sklearn.linear_model import LinearRegression
+
+// Crear un modelo de regresión lineal
+model = LinearRegression()
+
+//Ajustar el modelo a los datos de entrenamiento
+model.fit(X_train, y_train)
+
+// Hacer predicciones
+y_pred = model.predict(X_test)
+
+
+
+
+
+
+// ARIMA (usando statsmodels)://
+
+
+import statsmodels.api as sm
+
+//Crear un modelo ARIMA
+model = sm.tsa.ARIMA(time_series_data, order=(p, d, q))
+
+//Ajustar el modelo a los datos de series de tiempo
+model_fit = model.fit()
+
+//Hacer predicciones
+y_pred = model_fit.predict(start=..., end=..., dynamic=False)
+
+
+
+
+
+
+// K-means (usando scikit-learn): //
+
+
+from sklearn.cluster import KMeans
+
+// Crear un modelo K-means
+model = KMeans(n_clusters=k)
+
+//Ajustar el modelo a los datos
+model.fit(X)
+
+// Obtener etiquetas de grupos para cada punto de datos
+labels = model.labels_
+
+
+
+
+//A priori (usando la biblioteca mlxtend)://
+
+
+from mlxtend.frequent_patterns import apriori
+from mlxtend.frequent_patterns import association_rules
+
+// Generar conjuntos de elementos frecuentes
+frequent_itemsets = apriori(data, min_support=0.5, use_colnames=True)
+
+//Generar reglas de asociación
+rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1.0)
